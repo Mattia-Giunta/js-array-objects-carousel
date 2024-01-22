@@ -1,0 +1,13 @@
+
+
+
+/* classe custom per le immagini sotto al carosello */
+.tumbIMG{
+    width: 25%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid white;
+}
+
+/* Terminato esercizio */
