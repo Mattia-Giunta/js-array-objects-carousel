@@ -25,3 +25,97 @@
 
 // BONUS 3:
 // Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
+
+// inizializzazione costanti
+const arrowRight = document.getElementById('arrowNext');
+const arrowLeft = document.getElementById('arrowPrev');
+const placeHTML = document.getElementById('place');
+const infoHTML = document.getElementById('info');
+const figureHtml = document.getElementById('figure');
+
+console.log( figureHtml )
+
+// array di oggetti 
+const images = [
+    
+    {
+        place:'Stati Uniti',
+        info:'antelope canion',
+        link:'./assets/img/antelope canyon.jpg',
+    },
+    {
+        place:'Italia',
+        info:'Colosseo',
+        link:'./assets/img/colosseo.jpg',
+    },
+    {
+        place:'Perù',
+        info:'Machu Picchu',
+        link:'./assets/img/machu picchu.jpg',
+    },
+    {
+        place:'Australia',
+        info:'Opera House',
+        link:'./assets/img/opera house.jpg',
+    },
+    {
+        place:'Giappone',
+        info:'Santuario di Fuschimi Inari',
+        link:'./assets/img/santuario giappone.jpg',
+    },
+    
+];
+
+// variabile per dare una posizione all'immagine
+let currentImage = 0;
+
+// assegna la prima immagine e il contenuto di pertenza
+figureHtml.setAttribute('src', images[currentImage].link);
+placeHTML.innerText = images[currentImage].place;
+infoHTML.innerText = images[currentImage].info;
+
+
+
+for(let i = 0; i < images.length; i++){
+
+
+}
+
+
+// al click fa scorrete le immagini a destra
+arrowRight.addEventListener('click', function(){
+
+    if(currentImage === 4){
+
+        currentImage = 0;
+
+    } else {
+
+        currentImage++
+    }
+
+    figureHtml.setAttribute('src', images[currentImage].link);
+    placeHTML.innerText = images[currentImage].place;
+    infoHTML.innerText = images[currentImage].info;
+
+})
+
+
+
+// al click fa scorrete le immagini a sinistra
+arrowLeft.addEventListener('click', function(){
+
+    if(currentImage === 0){
+
+        currentImage = 4;
+
+    } else {
+
+        currentImage--
+    }
+
+    figureHtml.setAttribute('src', images[currentImage].link);
+    placeHTML.innerText = images[currentImage].place;
+    infoHTML.innerText = images[currentImage].info;
+
+})
